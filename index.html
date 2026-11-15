@@ -19,8 +19,6 @@
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23090909'/%3E%3Cpath d='M16 48V16l32 32V16' fill='none' stroke='%23B51224' stroke-width='6'/%3E%3C/svg%3E">
 
-<link rel="stylesheet" href="styles/tadow-ai.css">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -616,11 +614,65 @@ footer .wrap {
     transition: none !important;
   }
 }
+
+/* PREMIUM LAYER */
+[hidden]{display:none!important}
+#waves{position:fixed;inset:0;width:100%;height:100%;z-index:-1;display:block}
+.glow{position:fixed;left:0;top:0;width:480px;height:480px;margin:-240px 0 0 -240px;border-radius:50%;background:radial-gradient(circle,rgba(181,18,36,.22),transparent 65%);pointer-events:none;z-index:60;opacity:0;transition:opacity .4s;mix-blend-mode:screen}
+.glow.on{opacity:1}
+.panel{background:rgba(14,14,14,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+.ic{width:1.2em;height:1.2em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.li-btn{display:inline-flex;align-items:center;gap:.45rem;margin-left:.4rem;border:1px solid var(--red);padding:.38rem .75rem;font-size:.78rem;text-decoration:none}
+.li-btn:hover,.btn.ghost:hover{background:var(--red)}
+.btn,.li-btn{transition:transform .2s ease-out,background .25s,color .25s}
+nav ul{gap:1.1rem}nav a{font-size:.84rem}
+@media(min-width:821px) and (max-width:1100px){nav ul{gap:.7rem}nav a{font-size:.74rem}}
+.rows .row{transition:background .3s,padding-left .3s}
+.rows .row:hover{background:rgba(181,18,36,.08);padding-left:.9rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:1.6rem 0 0}
+.chips li{border:1px solid var(--line);padding:.3rem .85rem;font-size:.85rem;transition:border-color .25s,background .25s,transform .25s}
+.chips li:hover{border-color:var(--red);background:rgba(181,18,36,.14);transform:translateY(-2px)}
+.vision{font:500 clamp(1.25rem,2.4vw,1.55rem)/1.5 var(--serif);border-left:3px solid var(--red);padding-left:1.1rem;margin:1.8rem 0 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem;margin-top:2.2rem}
+.wide{grid-column:1/-1}
+.card{position:relative;overflow:hidden;background:rgba(255,255,255,.035);border:1px solid var(--line);padding:1.6rem;transition:transform .25s ease-out,border-color .3s,box-shadow .3s;will-change:transform}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(280px circle at var(--mx,50%) var(--my,50%),rgba(181,18,36,.26),transparent 62%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{border-color:rgba(181,18,36,.75);box-shadow:0 22px 50px -24px rgba(181,18,36,.6)}
+.card:hover::before{opacity:1}
+.card h3{font:600 1.6rem/1.2 var(--serif);margin:0 0 .8rem}
+.tags,.books{list-style:none;margin:0;padding:0}
+.tags li{padding:.35rem 0;border-bottom:1px solid var(--line)}
+.books{columns:2 17rem;column-gap:2rem}
+.books li{padding:.35rem 0;break-inside:avoid;border-bottom:1px solid var(--line)}
+.books span{color:var(--mute);font-size:.88rem}
+.timeline{position:relative;margin-top:2.5rem;padding-left:2.2rem}
+.timeline::before,.timeline::after{content:"";position:absolute;left:5px;top:0;width:1px}
+.timeline::before{bottom:0;background:var(--line)}
+.timeline::after{height:calc(var(--p,0)*100%);background:var(--red);box-shadow:0 0 12px var(--red)}
+.tl-item{position:relative;display:grid;grid-template-columns:9rem 1fr;gap:1rem;padding:1.2rem 0}
+.tl-item::before{content:"";position:absolute;left:-2.2rem;top:1.75rem;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--red);transition:background .4s,box-shadow .4s}
+.tl-item.in::before{background:var(--red);box-shadow:0 0 0 6px rgba(181,18,36,.2)}
+.yr{color:var(--mute);font-variant-numeric:tabular-nums}
+.tl-item h3{font:600 1.5rem/1.2 var(--serif);margin:0}
+.tl-item p{margin:.25rem 0 0;color:var(--mute);max-width:60ch}
+.social{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin-top:2rem}
+.social a{display:flex;gap:.95rem;align-items:center;text-decoration:none;padding:1.1rem 1.25rem}
+.social .ic{width:1.7rem;height:1.7rem;color:var(--red);transition:transform .3s}
+.social a:hover .ic{transform:scale(1.18) rotate(-6deg)}
+.social .lbl{display:block;font-size:.8rem;color:var(--mute)}
+.social .val{overflow-wrap:anywhere}
+@media(max-width:820px){.tl-item{grid-template-columns:1fr;gap:.2rem}}
+@media(max-width:600px){.li-btn span{display:none}.li-btn{padding:.4rem .55rem}}
 </style>
-  <script src="scripts/tadow-ai.js" defer></script>
+<script>document.documentElement.classList.add("js")</script>
 </head>
 
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol><symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol><symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol><symbol id="i-telegram" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol><symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol></svg>
+<canvas id="waves" aria-hidden="true"></canvas>
+<div class="glow" id="glow" aria-hidden="true"></div>
 <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
 <header>
@@ -647,6 +699,7 @@ footer .wrap {
         <option value="es">Español</option>
         <option value="de">Deutsch</option>
       </select>
+      <a class="li-btn" href="https://www.linkedin.com/in/ulugbek-nayimov-4b9783261/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="ic"><use href="#i-linkedin"/></svg><span>LinkedIn</span></a>
     </div>
   </div>
 
@@ -660,8 +713,11 @@ footer .wrap {
       <ul>
         <li><a href="#about" data-i18n="navAbout">About</a></li>
         <li><a href="#focus" data-i18n="navFocus">Focus</a></li>
+        <li><a href="#academic" data-i18n="navAcademic">Academic</a></li>
+        <li><a href="#interests" data-i18n="navInterests">Interests</a></li>
+        <li><a href="#achievements" data-i18n="navAchievements">Achievements</a></li>
+        <li><a href="#cv" data-i18n="navCV">CV</a></li>
         <li><a href="#projects" data-i18n="navProjects">Projects</a></li>
-        <li><a href="#philosophy" data-i18n="navPhilosophy">Philosophy</a></li>
         <li><a href="#contact" data-i18n="navContact">Contact</a></li>
       </ul>
     </nav>
@@ -704,30 +760,26 @@ footer .wrap {
   </section>
 
   <!-- ABOUT -->
-
   <section id="about">
     <div class="wrap split">
       <h2 data-i18n="aboutTitle">About</h2>
-
       <div>
-        <p data-i18n="about1">
-          I am a business student at Sejong University in Seoul, originally from Uzbekistan. My work sits where business, financial markets and technology meet.
-        </p>
-
-        <p data-i18n="about2">
-          I study how markets move, practise trading with discipline, and build software to understand and automate what I learn. Alongside my studies I train regularly, because a clear mind and a steady routine are part of the work.
-        </p>
-
-        <p class="muted" data-i18n="about3">
-          This website is a record of that journey. It separates what I have completed, what I am building now, and what I plan to do next.
-        </p>
+        <p data-i18n="about1">I am a business student at Sejong University in Seoul, originally from Uzbekistan. My work sits where business, financial markets and technology meet.</p>
+        <p data-i18n="aboutBorn">I was born in 2004 in Namangan Province, Uzbekistan, and grew up learning mathematics and English, two subjects that still shape how I think about numbers, markets and the wider world.</p>
+        <p data-i18n="about2">I study how markets move, practise trading with discipline, and build software to understand and automate what I learn. Alongside my studies I train regularly, because a clear mind and a steady routine are part of the work.</p>
+        <p data-i18n="aboutVentures">Two ideas drive my long-term vision. Nay Corporation is the diversified business I aim to build over time, and TADOW AI is an artificial intelligence platform I plan to develop, starting on this website. Both are ambitions in development, and I will show real progress here as it happens.</p>
+        <p class="muted" data-i18n="about3">This website is a record of that journey. It separates what I have completed, what I am building now, and what I plan to do next.</p>
+        <p class="vision" data-i18n="aboutVision">To build meaningful ventures, create innovative solutions and establish a lasting international presence.</p>
+        <ul class="chips">
+          <li>Entrepreneurship</li><li>Finance and financial markets</li><li>Forex and gold trading</li><li>Artificial intelligence</li><li>Business management</li><li>Digital innovation</li><li>Investment analysis</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <!-- FOCUS -->
 
-  <section id="focus" style="background:var(--bg2)">
+  <section id="focus" class="panel">
     <div class="wrap">
       <h2 data-i18n="focusTitle">Areas of focus</h2>
 
@@ -752,6 +804,55 @@ footer .wrap {
             Programming and automation in Python, and applying artificial intelligence to practical financial problems.
           </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMIC -->
+  <section id="academic">
+    <div class="wrap">
+      <h2 data-i18n="academicTitle">Academic path</h2>
+      <div class="timeline" id="timeline">
+        <div class="tl-item reveal"><span class="yr">2010 – 2014</span><div><h3 data-i18n="tlPrimary">Primary school</h3><p>School No. 30, Namangan Province, Uzbekistan</p></div></div><div class="tl-item reveal"><span class="yr">2014 – 2019</span><div><h3 data-i18n="tlMiddle">Middle school</h3><p>School No. 30, Namangan Province, Uzbekistan</p></div></div><div class="tl-item reveal"><span class="yr">2019 – 2021</span><div><h3 data-i18n="tlHigh">High school</h3><p>School No. 30, Namangan Province, Uzbekistan</p><p data-i18n="tlHighNote">Graduated with a high score.</p></div></div>
+        <div class="tl-item reveal"><span class="yr">2022</span><div><h3>Sejong University</h3><p data-i18n="tlApplied">Applied in spring and was accepted. Arrived in South Korea on September 19.</p></div></div>
+        <div class="tl-item reveal"><span class="yr">2022 – Present</span><div><h3 data-i18n="tlUni">Bachelor of Business Administration (BBA)</h3><p>Sejong University, Seoul, South Korea</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERESTS -->
+  <section id="interests" class="panel">
+    <div class="wrap">
+      <h2 data-i18n="personalTitle">Personal interests</h2>
+      <div class="grid reveal">
+        <article class="card tilt"><h3 data-i18n="gamesTitle">Games</h3><ul class="tags"><li>Clash of Clans</li><li>PUBG</li><li>Counter-Strike 1.6</li></ul></article>
+        <article class="card tilt"><h3 data-i18n="hobbiesTitle">Hobbies</h3><ul class="tags"><li>Chess</li><li>Rubik’s Cube</li><li>Badminton</li></ul></article>
+        <article class="card tilt wide"><h3 data-i18n="booksTitle">Books</h3><ul class="books"><li>Steve Jobs <span>Walter Isaacson</span></li><li>The Selfish Gene <span>Richard Dawkins</span></li><li>Silent Spring <span>Rachel Carson</span></li><li>Justice <span>Michael Sandel</span></li><li>Fermat’s Last Theorem <span>Simon Singh</span></li><li>The Joy of X <span>Steven H. Strogatz</span></li><li>An Introduction to Mathematics <span>Alfred North Whitehead</span></li><li>Faust <span>Johann Wolfgang von Goethe</span></li><li>Fly: An Experimental Life <span>Martin Brookes</span></li><li>Demian <span>Hermann Hesse</span></li><li>Sapiens <span>Yuval Noah Harari</span></li><li>Frankenstein <span>Mary Shelley</span></li><li>Cosmos <span>Carl Sagan</span></li><li>Entropy</li><li>Power Unseen</li><li>Biotechnology Unzipped</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <div class="wrap">
+      <h2 data-i18n="achievementsTitle">Achievements</h2>
+      <!-- To add an achievement, upload the file to assets/achievements/ and add a card like this one inside the grid:
+           <a class="card tilt" href="assets/achievements/FILE.pdf" target="_blank" rel="noopener"><h3>Title</h3><p>Short description</p></a> -->
+      <div class="grid reveal" id="achGrid">
+        <article class="card tilt"><p class="muted" data-i18n="achSoon">Certificates and photos will appear here as they are added.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv" class="panel">
+    <div class="wrap split">
+      <h2 data-i18n="cvTitle">CV</h2>
+      <div>
+        <p data-i18n="cvText">Download my CV as a PDF.</p>
+        <!-- Upload your PDF as assets/cv/cv-nayimov-ulugbek.pdf and this button appears automatically. -->
+        <a class="btn solid" id="cvBtn" hidden href="assets/cv/cv-nayimov-ulugbek.pdf" download data-i18n="cvButton">Download CV</a>
+        <p class="muted" id="cvSoon" data-i18n="cvSoon">My CV will be available here soon.</p>
       </div>
     </div>
   </section>
@@ -813,51 +914,20 @@ footer .wrap {
   </section>
 
   <!-- CONTACT -->
-
   <section id="contact">
-    <div class="wrap split">
+    <div class="wrap">
       <h2 data-i18n="contactTitle">Contact</h2>
-
-      <div>
-        <p data-i18n="contactIntro">
-          For collaboration, questions or opportunities, reach out through any of these channels.
-        </p>
-
-        <ul class="links">
-          <li>
-            <span>GitHub</span>
-            <a href="https://github.com/Nayimov04"
-              target="_blank" rel="noopener noreferrer">
-              github.com/Nayimov04
-            </a>
-          </li>
-
-          <li>
-            <span data-i18n="personalEmail">Personal email</span>
-            <a href="mailto:Mr.Nayimov@gmail.com">Mr.Nayimov@gmail.com</a>
-          </li>
-
-          <li>
-            <span data-i18n="universityEmail">University email</span>
-            <a href="mailto:unayimov@sju.ac.kr">unayimov@sju.ac.kr</a>
-          </li>
-
-          <li>
-            <span>LinkedIn</span>
-            <a href="https://www.linkedin.com/in/ulugbek-nayimov-4b9783261/"
-              target="_blank" rel="noopener noreferrer">
-              linkedin.com/in/ulugbek-nayimov-4b9783261
-            </a>
-          </li>
-
-          <li>
-            <span>Instagram</span>
-            <a href="https://www.instagram.com/unayimov7/"
-              target="_blank" rel="noopener noreferrer">
-              instagram.com/unayimov7
-            </a>
-          </li>
-        </ul>
+      <p data-i18n="contactIntro">For collaboration, questions or opportunities, reach out through any of these channels.</p>
+      <div class="social reveal">
+        <a class="card tilt" href="mailto:Mr.Nayimov@gmail.com"><svg class="ic"><use href="#i-mail"/></svg><span><span class="lbl" data-i18n="personalEmail">Personal email</span><span class="val">Mr.Nayimov@gmail.com</span></span></a>
+        <a class="card tilt" href="mailto:unayimov@sju.ac.kr"><svg class="ic"><use href="#i-mail"/></svg><span><span class="lbl" data-i18n="universityEmail">University email</span><span class="val">unayimov@sju.ac.kr</span></span></a>
+        <a class="card tilt" href="https://www.linkedin.com/in/ulugbek-nayimov-4b9783261/" target="_blank" rel="noopener noreferrer"><svg class="ic"><use href="#i-linkedin"/></svg><span><span class="lbl">LinkedIn</span><span class="val">linkedin.com/in/ulugbek-nayimov-4b9783261</span></span></a>
+        <a class="card tilt" href="https://www.instagram.com/unayimov7/" target="_blank" rel="noopener noreferrer"><svg class="ic"><use href="#i-instagram"/></svg><span><span class="lbl">Instagram</span><span class="val">instagram.com/unayimov7</span></span></a>
+        <a class="card tilt" href="https://github.com/Nayimov04" target="_blank" rel="noopener noreferrer"><svg class="ic"><use href="#i-github"/></svg><span><span class="lbl">GitHub</span><span class="val">github.com/Nayimov04</span></span></a>
+        <!-- TELEGRAM: put your link in href (https://t.me/USERNAME), then delete the word hidden -->
+        <a class="card tilt" hidden href="https://t.me/USERNAME" target="_blank" rel="noopener noreferrer"><svg class="ic"><use href="#i-telegram"/></svg><span><span class="lbl">Telegram</span><span class="val">t.me/USERNAME</span></span></a>
+        <!-- FACEBOOK: put your profile link in href, then delete the word hidden -->
+        <a class="card tilt" hidden href="https://www.facebook.com/YOUR-PROFILE" target="_blank" rel="noopener noreferrer"><svg class="ic"><use href="#i-facebook"/></svg><span><span class="lbl">Facebook</span><span class="val">facebook.com/YOUR-PROFILE</span></span></a>
       </div>
     </div>
   </section>
@@ -1164,6 +1234,18 @@ const translations = {
   }
 };
 
+
+const extra={
+en:{navAcademic:"Academic",navInterests:"Interests",navAchievements:"Achievements",navCV:"CV",academicTitle:"Academic path",tlPrimary:"Primary school",tlMiddle:"Middle school",tlHigh:"High school",tlHighNote:"Graduated with a high score.",tlApplied:"Applied in spring and was accepted. Arrived in South Korea on September 19.",tlUni:"Bachelor of Business Administration (BBA)",personalTitle:"Personal interests",gamesTitle:"Games",booksTitle:"Books",hobbiesTitle:"Hobbies",achievementsTitle:"Achievements",achSoon:"Certificates and photos will appear here as they are added.",cvTitle:"CV",cvText:"Download my CV as a PDF.",cvButton:"Download CV",cvSoon:"My CV will be available here soon.",focusTitle:"Areas of interest",
+aboutBorn:"I was born in 2004 in Namangan Province, Uzbekistan, and grew up learning mathematics and English, two subjects that still shape how I think about numbers, markets and the wider world.",aboutVentures:"Two ideas drive my long-term vision. Nay Corporation is the diversified business I aim to build over time, and TADOW AI is an artificial intelligence platform I plan to develop, starting on this website. Both are ambitions in development, and I will show real progress here as it happens.",aboutVision:"To build meaningful ventures, create innovative solutions and establish a lasting international presence."},
+ko:{navAcademic:"학력",navInterests:"관심사",navAchievements:"성과",navCV:"이력서",academicTitle:"학업 경로",tlPrimary:"초등학교",tlMiddle:"중학교",tlHigh:"고등학교",tlHighNote:"높은 성적으로 졸업했습니다.",tlApplied:"봄에 지원하여 합격했고, 9월 19일 한국에 도착했습니다.",tlUni:"경영학사(BBA)",personalTitle:"개인 관심사",gamesTitle:"게임",booksTitle:"도서",hobbiesTitle:"취미",achievementsTitle:"성과",achSoon:"자격증과 사진은 추가되는 대로 이곳에 표시됩니다.",cvTitle:"이력서",cvText:"이력서를 PDF로 다운로드하세요.",cvButton:"이력서 다운로드",cvSoon:"이력서는 곧 이곳에 게시됩니다."},
+uz:{navAcademic:"Ta’lim",navInterests:"Qiziqishlar",navAchievements:"Yutuqlar",navCV:"CV",academicTitle:"Ta’lim yo‘li",tlPrimary:"Boshlang‘ich maktab",tlMiddle:"O‘rta maktab",tlHigh:"Yuqori sinflar",tlHighNote:"Yuqori ball bilan bitirdim.",tlApplied:"Bahorda hujjat topshirib, qabul qilindim. 19-sentabrda Janubiy Koreyaga yetib keldim.",tlUni:"Biznes boshqaruvi bakalavri (BBA)",personalTitle:"Shaxsiy qiziqishlar",gamesTitle:"O‘yinlar",booksTitle:"Kitoblar",hobbiesTitle:"Sevimli mashg‘ulotlar",achievementsTitle:"Yutuqlar",achSoon:"Sertifikat va suratlar qo‘shilgani sari shu yerda paydo bo‘ladi.",cvTitle:"CV",cvText:"CV’imni PDF shaklida yuklab oling.",cvButton:"CV yuklab olish",cvSoon:"CV tez orada shu yerda bo‘ladi."},
+ru:{navAcademic:"Учёба",navInterests:"Интересы",navAchievements:"Достижения",navCV:"Резюме",academicTitle:"Образовательный путь",tlPrimary:"Начальная школа",tlMiddle:"Средняя школа",tlHigh:"Старшая школа",tlHighNote:"Окончил с высоким баллом.",tlApplied:"Подал документы весной и был принят. Прибыл в Южную Корею 19 сентября.",tlUni:"Бакалавр делового администрирования (BBA)",personalTitle:"Личные интересы",gamesTitle:"Игры",booksTitle:"Книги",hobbiesTitle:"Хобби",achievementsTitle:"Достижения",achSoon:"Сертификаты и фотографии появятся здесь по мере добавления.",cvTitle:"Резюме",cvText:"Скачайте моё резюме в формате PDF.",cvButton:"Скачать резюме",cvSoon:"Резюме скоро появится здесь."},
+es:{navAcademic:"Formación",navInterests:"Intereses",navAchievements:"Logros",navCV:"CV",academicTitle:"Trayectoria académica",tlPrimary:"Escuela primaria",tlMiddle:"Educación secundaria básica",tlHigh:"Bachillerato",tlHighNote:"Me gradué con una calificación alta.",tlApplied:"Solicité en primavera y fui aceptado. Llegué a Corea del Sur el 19 de septiembre.",tlUni:"Licenciatura en Administración de Empresas (BBA)",personalTitle:"Intereses personales",gamesTitle:"Videojuegos",booksTitle:"Libros",hobbiesTitle:"Pasatiempos",achievementsTitle:"Logros",achSoon:"Los certificados y las fotos aparecerán aquí a medida que se añadan.",cvTitle:"CV",cvText:"Descarga mi CV en PDF.",cvButton:"Descargar CV",cvSoon:"Mi CV estará disponible aquí pronto."},
+de:{navAcademic:"Ausbildung",navInterests:"Interessen",navAchievements:"Erfolge",navCV:"Lebenslauf",academicTitle:"Bildungsweg",tlPrimary:"Grundschule",tlMiddle:"Mittelschule",tlHigh:"Oberstufe",tlHighNote:"Mit hoher Punktzahl abgeschlossen.",tlApplied:"Im Frühjahr beworben und angenommen. Am 19. September in Südkorea angekommen.",tlUni:"Bachelor of Business Administration (BBA)",personalTitle:"Persönliche Interessen",gamesTitle:"Spiele",booksTitle:"Bücher",hobbiesTitle:"Hobbys",achievementsTitle:"Erfolge",achSoon:"Zertifikate und Fotos erscheinen hier, sobald sie hinzugefügt werden.",cvTitle:"Lebenslauf",cvText:"Laden Sie meinen Lebenslauf als PDF herunter.",cvButton:"Lebenslauf herunterladen",cvSoon:"Mein Lebenslauf ist bald hier verfügbar."}
+};
+for(const l in extra)Object.assign(translations[l],extra[l]);
+
 /* LANGUAGE SWITCHING */
 
 const languageSelect = document.getElementById("language");
@@ -1182,8 +1264,9 @@ function setLanguage(language) {
   document.querySelectorAll("[data-i18n]").forEach(element => {
     const key = element.getAttribute("data-i18n");
 
-    if (dictionary[key]) {
-      element.textContent = dictionary[key];
+    const text = dictionary[key] || translations.en[key];
+    if (text) {
+      element.textContent = text;
     }
   });
 
@@ -1272,6 +1355,67 @@ try {
 }
 
 setLanguage(initialLanguage);
+
+/* WAVES, MOUSE EFFECTS, REVEAL */
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hover=matchMedia('(hover: hover)').matches;
+  const cv=document.getElementById('waves'),g=cv.getContext('2d');
+  let w,h,t=0,mx=.5,my=.5,dpr=Math.min(devicePixelRatio||1,2);
+  function size(){w=innerWidth;h=innerHeight;cv.width=w*dpr;cv.height=h*dpr;g.setTransform(dpr,0,0,dpr,0,0)}
+  addEventListener('resize',size);size();
+  addEventListener('pointermove',e=>{mx=e.clientX/w;my=e.clientY/h},{passive:true});
+  const L=[{a:.07,f:.0016,s:.5,y:.32,c:'181,18,36',o:.22},{a:.06,f:.0023,s:-.38,y:.5,c:'181,18,36',o:.15},{a:.08,f:.0012,s:.28,y:.68,c:'244,241,236',o:.05},{a:.05,f:.0029,s:-.66,y:.86,c:'181,18,36',o:.2}];
+  function draw(){
+    const bg=g.createLinearGradient(0,0,0,h);bg.addColorStop(0,'#090909');bg.addColorStop(1,'#140708');
+    g.fillStyle=bg;g.fillRect(0,0,w,h);
+    L.forEach((l,i)=>{
+      g.beginPath();
+      for(let x=0;x<=w+10;x+=10){
+        const d=Math.exp(-Math.pow(x/w-mx,2)*7);
+        const y=h*l.y+Math.sin(x*l.f+t*l.s+i*1.7)*h*l.a*(1+.7*d)+Math.sin(x*l.f*2.2-t*l.s*.8)*h*l.a*.3+(my-.5)*26*(i+1)/2;
+        x?g.lineTo(x,y):g.moveTo(x,y);
+      }
+      g.strokeStyle='rgba('+l.c+','+Math.min(.5,l.o*2)+')';g.lineWidth=1.2;g.stroke();
+      g.lineTo(w+10,h);g.lineTo(0,h);g.closePath();
+      const f=g.createLinearGradient(0,h*(l.y-.12),0,h);
+      f.addColorStop(0,'rgba('+l.c+','+l.o+')');f.addColorStop(1,'rgba('+l.c+',0)');
+      g.fillStyle=f;g.fill();
+    });
+  }
+  (function loop(){t+=.011;draw();if(!reduce)requestAnimationFrame(loop)})();
+
+  if(hover&&!reduce){
+    const gl=document.getElementById('glow');let gx=0,gy=0,tx=0,ty=0;
+    addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;gl.classList.add('on')},{passive:true});
+    (function f(){gx+=(tx-gx)*.12;gy+=(ty-gy)*.12;gl.style.transform='translate('+gx+'px,'+gy+'px)';requestAnimationFrame(f)})();
+    document.querySelectorAll('.tilt').forEach(el=>{
+      el.addEventListener('pointermove',e=>{
+        const r=el.getBoundingClientRect(),px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;
+        el.style.setProperty('--mx',px*100+'%');el.style.setProperty('--my',py*100+'%');
+        el.style.transform='perspective(900px) rotateX('+((.5-py)*7)+'deg) rotateY('+((px-.5)*7)+'deg) translateY(-4px)';
+      });
+      el.addEventListener('pointerleave',()=>{el.style.transform=''});
+    });
+    document.querySelectorAll('.btn,.li-btn').forEach(el=>{
+      el.addEventListener('pointermove',e=>{
+        const r=el.getBoundingClientRect();
+        el.style.transform='translate('+((e.clientX-r.left-r.width/2)*.2)+'px,'+((e.clientY-r.top-r.height/2)*.3)+'px)';
+      });
+      el.addEventListener('pointerleave',()=>{el.style.transform=''});
+    });
+  }
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  const tl=document.getElementById('timeline');
+  function prog(){const r=tl.getBoundingClientRect();tl.style.setProperty('--p',Math.min(1,Math.max(0,(innerHeight*.65-r.top)/r.height)))}
+  addEventListener('scroll',prog,{passive:true});prog();
+
+  const btn=document.getElementById('cvBtn'),soon=document.getElementById('cvSoon');
+  fetch(btn.getAttribute('href'),{method:'HEAD'}).then(r=>{if(r.ok){btn.hidden=false;soon.hidden=true}}).catch(()=>{});
+})();
 </script>
 
 </body>
