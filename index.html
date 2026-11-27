@@ -617,10 +617,10 @@ footer .wrap {
 
 /* PREMIUM LAYER */
 [hidden]{display:none!important}
-#waves{position:fixed;inset:0;width:100%;height:100%;z-index:-1;display:block}
+#space3d{position:fixed;inset:0;width:100%;height:100%;z-index:-1;display:block;pointer-events:none}
 .glow{position:fixed;left:0;top:0;width:480px;height:480px;margin:-240px 0 0 -240px;border-radius:50%;background:radial-gradient(circle,rgba(181,18,36,.22),transparent 65%);pointer-events:none;z-index:60;opacity:0;transition:opacity .4s;mix-blend-mode:screen}
 .glow.on{opacity:1}
-.panel{background:rgba(14,14,14,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.panel{background:rgba(9,9,11,.56);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
 .js .reveal.in{opacity:1;transform:none}
 .ic{width:1.2em;height:1.2em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
@@ -685,11 +685,13 @@ nav ul{gap:1.1rem}nav a{font-size:.84rem}
 .player iframe{display:block;width:100%;height:352px;border:0;border-radius:12px;color-scheme:dark}
 </style>
 <script>document.documentElement.classList.add("js")</script>
+  <link rel="stylesheet" href="styles/tadow-ai.css">
+  <script src="scripts/tadow-ai.js" defer></script>
 </head>
 
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol><symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol><symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol><symbol id="i-telegram" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol><symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol></svg>
-<canvas id="waves" aria-hidden="true"></canvas>
+<canvas id="space3d" aria-hidden="true"></canvas>
 <div class="glow" id="glow" aria-hidden="true"></div>
 <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
@@ -785,7 +787,7 @@ nav ul{gap:1.1rem}nav a{font-size:.84rem}
         <p data-i18n="about1">I am a business student at Sejong University in Seoul, originally from Uzbekistan. My work sits where business, financial markets and technology meet.</p>
         <p data-i18n="aboutBorn">I was born in 2004 in Namangan Province, Uzbekistan, and grew up learning mathematics and English, two subjects that still shape how I think about numbers, markets and the wider world.</p>
         <p data-i18n="about2">I study how markets move, practise trading with discipline, and build software to understand and automate what I learn. Alongside my studies I train regularly, because a clear mind and a steady routine are part of the work.</p>
-        <p data-i18n="aboutVentures">Two ideas drive my long-term vision. Nay Corporation is the diversified business I aim to build over time, and TADOW AI is an artificial intelligence platform I plan to develop, starting on this website. Both are ambitions in development, and I will show real progress here as it happens.</p>
+        <p data-i18n="aboutVentures">Two ideas drive my long-term vision. Nay Corporation is a long-term business ambition, while TADOW AI is now in development, beginning with an AI assistant on this website. I will share verified progress as the project grows.</p>
         <p class="muted" data-i18n="about3">This website is a record of that journey. It separates what I have completed, what I am building now, and what I plan to do next.</p>
         <p class="vision" data-i18n="aboutVision">To build meaningful ventures, create innovative solutions and establish a lasting international presence.</p>
         <ul class="chips">
@@ -875,6 +877,14 @@ nav ul{gap:1.1rem}nav a{font-size:.84rem}
            <a class="card tilt" href="assets/achievements/FILE.pdf" target="_blank" rel="noopener"><h3>Title</h3><p>Short description</p></a> -->
       <div class="grid reveal" id="achGrid">
         <article class="card tilt">
+          <h3>Machine Learning for Beginners</h3>
+          <p class="muted">Sololearn certificate of completion · ID: CC-ZUKHEOX7 · December 2025</p>
+          <p>Theoretical and practical understanding of machine learning fundamentals.</p>
+          <div class="card-links">
+            <a href="certificates/Cert-Machine-Learning.pdf" target="_blank" rel="noopener">View certificate (PDF)</a>
+          </div>
+        </article>
+        <article class="card tilt">
           <h3>The Complete Korean Course for Beginners</h3>
           <p class="muted">Udemy certificate of completion · 74 hours · November 2026</p>
           <p>Instructors: Keehwan Kim, Korean Studio.</p>
@@ -902,8 +912,8 @@ nav ul{gap:1.1rem}nav a{font-size:.84rem}
       <h2 data-i18n="cvTitle">CV</h2>
       <div>
         <p data-i18n="cvText">Download my CV as a PDF.</p>
-        <!-- Upload your PDF as assets/cv/cv-nayimov-ulugbek.pdf and this button appears automatically. -->
-        <a class="btn solid" id="cvBtn" hidden href="assets/cv/cv-nayimov-ulugbek.pdf" download data-i18n="cvButton">Download CV</a>
+        <!-- Upload cv-nayimov-ulugbek.pdf next to index.html and this button appears automatically. -->
+        <a class="btn solid" id="cvBtn" hidden href="cv-nayimov-ulugbek.pdf" download data-i18n="cvButton">Download CV</a>
         <p class="muted" id="cvSoon" data-i18n="cvSoon">My CV will be available here soon.</p>
       </div>
     </div>
@@ -937,11 +947,11 @@ nav ul{gap:1.1rem}nav a{font-size:.84rem}
         </div>
 
         <div class="row proj">
-          <h3 data-i18n="assistantTitle">Personal AI assistant</h3>
+          <h3 data-i18n="assistantTitle">TADOW AI</h3>
           <p data-i18n="assistantText">
-            A planned assistant for market-price monitoring and personal notifications.
+            An AI platform in active development, beginning with this website assistant.
           </p>
-          <span class="status" data-i18n="planned">Planned</span>
+          <span class="status" data-i18n="inProgress">In progress</span>
         </div>
       </div>
     </div>
@@ -1029,8 +1039,8 @@ const translations = {
     websiteText: "A professional digital identity built with HTML, CSS and JavaScript, hosted on GitHub Pages.",
     tradingTitle: "AI trading research tool",
     tradingText: "A planned Python project to analyse forex market data and explore trading ideas with AI for learning and research.",
-    assistantTitle: "Personal AI assistant",
-    assistantText: "A planned assistant for market-price monitoring and personal notifications.",
+    assistantTitle: "TADOW AI",
+    assistantText: "An AI platform in active development, beginning with this website assistant. Future capabilities are planned for live research, coding support, document analysis and specialized tools.",
     inProgress: "In progress",
     planned: "Planned",
     philosophyTitle: "Philosophy",
@@ -1077,8 +1087,8 @@ const translations = {
     websiteText: "HTML, CSS 및 JavaScript로 구축하고 GitHub Pages에서 호스팅하는 전문 디지털 프로필입니다.",
     tradingTitle: "AI 트레이딩 연구 도구",
     tradingText: "외환시장 데이터를 분석하고 학습 및 연구를 위해 AI로 트레이딩 아이디어를 탐구하는 Python 프로젝트입니다.",
-    assistantTitle: "개인 AI 비서",
-    assistantText: "시장 가격을 모니터링하고 개인 알림을 제공하는 것을 목표로 하는 프로젝트입니다.",
+    assistantTitle: "TADOW AI",
+    assistantText: "이 웹사이트의 AI 어시스턴트로 시작하는 개발 중인 AI 플랫폼입니다. 실시간 조사, 코딩 지원, 문서 분석 및 전문 도구는 향후 기능으로 계획되어 있습니다.",
     inProgress: "진행 중",
     planned: "계획 중",
     philosophyTitle: "철학",
@@ -1125,8 +1135,8 @@ const translations = {
     websiteText: "HTML, CSS va JavaScript yordamida yaratilgan hamda GitHub Pages platformasida joylashtirilgan professional raqamli profil.",
     tradingTitle: "AI treyding tadqiqot vositasi",
     tradingText: "Forex bozor ma’lumotlarini tahlil qilish va o‘rganish hamda tadqiqot uchun AI yordamida savdo g‘oyalarini sinab ko‘rishga mo‘ljallangan Python loyihasi.",
-    assistantTitle: "Shaxsiy AI yordamchi",
-    assistantText: "Bozor narxlarini kuzatish va shaxsiy bildirishnomalar yuborishga mo‘ljallangan rejalashtirilgan loyiha.",
+    assistantTitle: "TADOW AI",
+    assistantText: "Ushbu veb-saytdagi AI yordamchidan boshlanayotgan ishlab chiqish bosqichidagi AI platformasi. Jonli tadqiqot, kod yozish yordami, hujjat tahlili va maxsus vositalar kelajakdagi imkoniyatlar sifatida rejalashtirilgan.",
     inProgress: "Jarayonda",
     planned: "Rejalashtirilgan",
     philosophyTitle: "Falsafa",
@@ -1173,8 +1183,8 @@ const translations = {
     websiteText: "Профессиональное цифровое представительство, созданное с помощью HTML, CSS и JavaScript и размещённое на GitHub Pages.",
     tradingTitle: "Инструмент для исследований AI-трейдинга",
     tradingText: "Планируемый проект на Python для анализа данных валютного рынка и изучения торговых идей с помощью ИИ.",
-    assistantTitle: "Персональный AI-помощник",
-    assistantText: "Планируемый помощник для отслеживания рыночных цен и отправки личных уведомлений.",
+    assistantTitle: "TADOW AI",
+    assistantText: "AI-платформа в разработке, начинающаяся с помощника на этом сайте. В будущем планируются поиск актуальной информации, помощь с кодом, анализ документов и специализированные инструменты.",
     inProgress: "В процессе",
     planned: "Запланировано",
     philosophyTitle: "Философия",
@@ -1221,8 +1231,8 @@ const translations = {
     websiteText: "Una identidad digital profesional creada con HTML, CSS y JavaScript y alojada en GitHub Pages.",
     tradingTitle: "Herramienta de investigación de trading con IA",
     tradingText: "Un proyecto planificado en Python para analizar datos del mercado forex y explorar ideas de trading con IA para aprendizaje e investigación.",
-    assistantTitle: "Asistente personal de IA",
-    assistantText: "Un asistente planificado para supervisar los precios del mercado y enviar notificaciones personales.",
+    assistantTitle: "TADOW AI",
+    assistantText: "Una plataforma de IA en desarrollo que comienza con este asistente web. Entre las funciones futuras previstas están la investigación en directo, la ayuda con código, el análisis de documentos y herramientas especializadas.",
     inProgress: "En desarrollo",
     planned: "Planificado",
     philosophyTitle: "Filosofía",
@@ -1269,8 +1279,8 @@ const translations = {
     websiteText: "Eine professionelle digitale Identität, erstellt mit HTML, CSS und JavaScript und auf GitHub Pages gehostet.",
     tradingTitle: "KI-Tool für Trading-Forschung",
     tradingText: "Ein geplantes Python-Projekt zur Analyse von Forex-Marktdaten und zur Untersuchung von Trading-Ideen mit KI für Lernen und Forschung.",
-    assistantTitle: "Persönlicher KI-Assistent",
-    assistantText: "Ein geplanter Assistent zur Überwachung von Marktpreisen und für persönliche Benachrichtigungen.",
+    assistantTitle: "TADOW AI",
+    assistantText: "Eine KI-Plattform in Entwicklung, beginnend mit diesem Website-Assistenten. Für die Zukunft sind Live-Recherche, Programmierhilfe, Dokumentenanalyse und spezialisierte Werkzeuge geplant.",
     inProgress: "In Arbeit",
     planned: "Geplant",
     philosophyTitle: "Philosophie",
@@ -1289,12 +1299,12 @@ const translations = {
 
 const extra={
 en:{navAcademic:"Academic",navInterests:"Interests",navAchievements:"Achievements",navCV:"CV",academicTitle:"Academic path",tlPrimary:"Primary school",tlMiddle:"Middle school",tlHigh:"High school",tlHighNote:"Graduated with a high score.",tlApplied:"Applied in spring and was accepted. Arrived in South Korea on September 19.",tlUni:"Bachelor of Business Administration (BBA)",personalTitle:"Personal interests",gamesTitle:"Games",booksTitle:"Books",hobbiesTitle:"Hobbies",achievementsTitle:"Achievements",achSoon:"Certificates and photos will appear here as they are added.",cvTitle:"CV",cvText:"Download my CV as a PDF.",cvButton:"Download CV",cvSoon:"My CV will be available here soon.",focusTitle:"Areas of interest",
-aboutBorn:"I was born in 2004 in Namangan Province, Uzbekistan, and grew up learning mathematics and English, two subjects that still shape how I think about numbers, markets and the wider world.",aboutVentures:"Two ideas drive my long-term vision. Nay Corporation is the diversified business I aim to build over time, and TADOW AI is an artificial intelligence platform I plan to develop, starting on this website. Both are ambitions in development, and I will show real progress here as it happens.",aboutVision:"To build meaningful ventures, create innovative solutions and establish a lasting international presence."},
-ko:{navAcademic:"학력",navInterests:"관심사",navAchievements:"성과",navCV:"이력서",academicTitle:"학업 경로",tlPrimary:"초등학교",tlMiddle:"중학교",tlHigh:"고등학교",tlHighNote:"높은 성적으로 졸업했습니다.",tlApplied:"봄에 지원하여 합격했고, 9월 19일 한국에 도착했습니다.",tlUni:"경영학사(BBA)",personalTitle:"개인 관심사",gamesTitle:"게임",booksTitle:"도서",hobbiesTitle:"취미",achievementsTitle:"성과",achSoon:"자격증과 사진은 추가되는 대로 이곳에 표시됩니다.",cvTitle:"이력서",cvText:"이력서를 PDF로 다운로드하세요.",cvButton:"이력서 다운로드",cvSoon:"이력서는 곧 이곳에 게시됩니다."},
-uz:{navAcademic:"Ta’lim",navInterests:"Qiziqishlar",navAchievements:"Yutuqlar",navCV:"CV",academicTitle:"Ta’lim yo‘li",tlPrimary:"Boshlang‘ich maktab",tlMiddle:"O‘rta maktab",tlHigh:"Yuqori sinflar",tlHighNote:"Yuqori ball bilan bitirdim.",tlApplied:"Bahorda hujjat topshirib, qabul qilindim. 19-sentabrda Janubiy Koreyaga yetib keldim.",tlUni:"Biznes boshqaruvi bakalavri (BBA)",personalTitle:"Shaxsiy qiziqishlar",gamesTitle:"O‘yinlar",booksTitle:"Kitoblar",hobbiesTitle:"Sevimli mashg‘ulotlar",achievementsTitle:"Yutuqlar",achSoon:"Sertifikat va suratlar qo‘shilgani sari shu yerda paydo bo‘ladi.",cvTitle:"CV",cvText:"CV’imni PDF shaklida yuklab oling.",cvButton:"CV yuklab olish",cvSoon:"CV tez orada shu yerda bo‘ladi."},
-ru:{navAcademic:"Учёба",navInterests:"Интересы",navAchievements:"Достижения",navCV:"Резюме",academicTitle:"Образовательный путь",tlPrimary:"Начальная школа",tlMiddle:"Средняя школа",tlHigh:"Старшая школа",tlHighNote:"Окончил с высоким баллом.",tlApplied:"Подал документы весной и был принят. Прибыл в Южную Корею 19 сентября.",tlUni:"Бакалавр делового администрирования (BBA)",personalTitle:"Личные интересы",gamesTitle:"Игры",booksTitle:"Книги",hobbiesTitle:"Хобби",achievementsTitle:"Достижения",achSoon:"Сертификаты и фотографии появятся здесь по мере добавления.",cvTitle:"Резюме",cvText:"Скачайте моё резюме в формате PDF.",cvButton:"Скачать резюме",cvSoon:"Резюме скоро появится здесь."},
-es:{navAcademic:"Formación",navInterests:"Intereses",navAchievements:"Logros",navCV:"CV",academicTitle:"Trayectoria académica",tlPrimary:"Escuela primaria",tlMiddle:"Educación secundaria básica",tlHigh:"Bachillerato",tlHighNote:"Me gradué con una calificación alta.",tlApplied:"Solicité en primavera y fui aceptado. Llegué a Corea del Sur el 19 de septiembre.",tlUni:"Licenciatura en Administración de Empresas (BBA)",personalTitle:"Intereses personales",gamesTitle:"Videojuegos",booksTitle:"Libros",hobbiesTitle:"Pasatiempos",achievementsTitle:"Logros",achSoon:"Los certificados y las fotos aparecerán aquí a medida que se añadan.",cvTitle:"CV",cvText:"Descarga mi CV en PDF.",cvButton:"Descargar CV",cvSoon:"Mi CV estará disponible aquí pronto."},
-de:{navAcademic:"Ausbildung",navInterests:"Interessen",navAchievements:"Erfolge",navCV:"Lebenslauf",academicTitle:"Bildungsweg",tlPrimary:"Grundschule",tlMiddle:"Mittelschule",tlHigh:"Oberstufe",tlHighNote:"Mit hoher Punktzahl abgeschlossen.",tlApplied:"Im Frühjahr beworben und angenommen. Am 19. September in Südkorea angekommen.",tlUni:"Bachelor of Business Administration (BBA)",personalTitle:"Persönliche Interessen",gamesTitle:"Spiele",booksTitle:"Bücher",hobbiesTitle:"Hobbys",achievementsTitle:"Erfolge",achSoon:"Zertifikate und Fotos erscheinen hier, sobald sie hinzugefügt werden.",cvTitle:"Lebenslauf",cvText:"Laden Sie meinen Lebenslauf als PDF herunter.",cvButton:"Lebenslauf herunterladen",cvSoon:"Mein Lebenslauf ist bald hier verfügbar."}
+aboutBorn:"I was born in 2004 in Namangan Province, Uzbekistan, and grew up learning mathematics and English, two subjects that still shape how I think about numbers, markets and the wider world.",aboutVentures:"Two ideas drive my long-term vision. Nay Corporation is a long-term business ambition, while TADOW AI is now in development, beginning with an AI assistant on this website. I will share verified progress as the project grows.",aboutVision:"To build meaningful ventures, create innovative solutions and establish a lasting international presence."},
+ko:{aboutVentures:"제 장기적인 비전은 두 가지 아이디어를 중심으로 합니다. Nay Corporation은 장기적인 사업 목표이며, TADOW AI는 이 웹사이트의 AI 어시스턴트부터 개발을 시작했습니다. 프로젝트가 성장하는 과정과 확인된 진행 상황을 공유하겠습니다.",navAcademic:"학력",navInterests:"관심사",navAchievements:"성과",navCV:"이력서",academicTitle:"학업 경로",tlPrimary:"초등학교",tlMiddle:"중학교",tlHigh:"고등학교",tlHighNote:"높은 성적으로 졸업했습니다.",tlApplied:"봄에 지원하여 합격했고, 9월 19일 한국에 도착했습니다.",tlUni:"경영학사(BBA)",personalTitle:"개인 관심사",gamesTitle:"게임",booksTitle:"도서",hobbiesTitle:"취미",achievementsTitle:"성과",achSoon:"자격증과 사진은 추가되는 대로 이곳에 표시됩니다.",cvTitle:"이력서",cvText:"이력서를 PDF로 다운로드하세요.",cvButton:"이력서 다운로드",cvSoon:"이력서는 곧 이곳에 게시됩니다."},
+uz:{aboutVentures:"Uzoq muddatli qarashlarim ikki g‘oyaga asoslanadi. Nay Corporation — kelajakdagi biznes maqsadim, TADOW AI esa ushbu saytdagi AI yordamchidan boshlab ishlab chiqilmoqda. Loyiha rivojlangani sari tasdiqlangan natijalarni ulashaman.",navAcademic:"Ta’lim",navInterests:"Qiziqishlar",navAchievements:"Yutuqlar",navCV:"CV",academicTitle:"Ta’lim yo‘li",tlPrimary:"Boshlang‘ich maktab",tlMiddle:"O‘rta maktab",tlHigh:"Yuqori sinflar",tlHighNote:"Yuqori ball bilan bitirdim.",tlApplied:"Bahorda hujjat topshirib, qabul qilindim. 19-sentabrda Janubiy Koreyaga yetib keldim.",tlUni:"Biznes boshqaruvi bakalavri (BBA)",personalTitle:"Shaxsiy qiziqishlar",gamesTitle:"O‘yinlar",booksTitle:"Kitoblar",hobbiesTitle:"Sevimli mashg‘ulotlar",achievementsTitle:"Yutuqlar",achSoon:"Sertifikat va suratlar qo‘shilgani sari shu yerda paydo bo‘ladi.",cvTitle:"CV",cvText:"CV’imni PDF shaklida yuklab oling.",cvButton:"CV yuklab olish",cvSoon:"CV tez orada shu yerda bo‘ladi."},
+ru:{aboutVentures:"Моё долгосрочное видение основано на двух идеях. Nay Corporation — долгосрочная бизнес-цель, а TADOW AI уже разрабатывается, начиная с ИИ-помощника на этом сайте. По мере развития проекта я буду делиться подтверждёнными результатами.",navAcademic:"Учёба",navInterests:"Интересы",navAchievements:"Достижения",navCV:"Резюме",academicTitle:"Образовательный путь",tlPrimary:"Начальная школа",tlMiddle:"Средняя школа",tlHigh:"Старшая школа",tlHighNote:"Окончил с высоким баллом.",tlApplied:"Подал документы весной и был принят. Прибыл в Южную Корею 19 сентября.",tlUni:"Бакалавр делового администрирования (BBA)",personalTitle:"Личные интересы",gamesTitle:"Игры",booksTitle:"Книги",hobbiesTitle:"Хобби",achievementsTitle:"Достижения",achSoon:"Сертификаты и фотографии появятся здесь по мере добавления.",cvTitle:"Резюме",cvText:"Скачайте моё резюме в формате PDF.",cvButton:"Скачать резюме",cvSoon:"Резюме скоро появится здесь."},
+es:{aboutVentures:"Mi visión a largo plazo se basa en dos ideas. Nay Corporation es una ambición empresarial a largo plazo, mientras que TADOW AI ya está en desarrollo, comenzando con un asistente de IA en este sitio. Compartiré avances verificados a medida que crezca el proyecto.",navAcademic:"Formación",navInterests:"Intereses",navAchievements:"Logros",navCV:"CV",academicTitle:"Trayectoria académica",tlPrimary:"Escuela primaria",tlMiddle:"Educación secundaria básica",tlHigh:"Bachillerato",tlHighNote:"Me gradué con una calificación alta.",tlApplied:"Solicité en primavera y fui aceptado. Llegué a Corea del Sur el 19 de septiembre.",tlUni:"Licenciatura en Administración de Empresas (BBA)",personalTitle:"Intereses personales",gamesTitle:"Videojuegos",booksTitle:"Libros",hobbiesTitle:"Pasatiempos",achievementsTitle:"Logros",achSoon:"Los certificados y las fotos aparecerán aquí a medida que se añadan.",cvTitle:"CV",cvText:"Descarga mi CV en PDF.",cvButton:"Descargar CV",cvSoon:"Mi CV estará disponible aquí pronto."},
+de:{aboutVentures:"Meine langfristige Vision basiert auf zwei Ideen. Nay Corporation ist ein langfristiges Unternehmensziel, während TADOW AI bereits entwickelt wird und mit einem KI-Assistenten auf dieser Website beginnt. Ich werde bestätigte Fortschritte teilen, während das Projekt wächst.",navAcademic:"Ausbildung",navInterests:"Interessen",navAchievements:"Erfolge",navCV:"Lebenslauf",academicTitle:"Bildungsweg",tlPrimary:"Grundschule",tlMiddle:"Mittelschule",tlHigh:"Oberstufe",tlHighNote:"Mit hoher Punktzahl abgeschlossen.",tlApplied:"Im Frühjahr beworben und angenommen. Am 19. September in Südkorea angekommen.",tlUni:"Bachelor of Business Administration (BBA)",personalTitle:"Persönliche Interessen",gamesTitle:"Spiele",booksTitle:"Bücher",hobbiesTitle:"Hobbys",achievementsTitle:"Erfolge",achSoon:"Zertifikate und Fotos erscheinen hier, sobald sie hinzugefügt werden.",cvTitle:"Lebenslauf",cvText:"Laden Sie meinen Lebenslauf als PDF herunter.",cvButton:"Lebenslauf herunterladen",cvSoon:"Mein Lebenslauf ist bald hier verfügbar."}
 };
 for(const l in extra)Object.assign(translations[l],extra[l]);
 
@@ -1412,30 +1422,483 @@ setLanguage(initialLanguage);
 (function(){
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const hover=matchMedia('(hover: hover)').matches;
-  const cv=document.getElementById('waves'),g=cv.getContext('2d');
-  let w,h,t=0,mx=.5,my=.5,dpr=Math.min(devicePixelRatio||1,2);
-  function size(){w=innerWidth;h=innerHeight;cv.width=w*dpr;cv.height=h*dpr;g.setTransform(dpr,0,0,dpr,0,0)}
-  addEventListener('resize',size);size();
-  addEventListener('pointermove',e=>{mx=e.clientX/w;my=e.clientY/h},{passive:true});
-  const L=[{a:.07,f:.0016,s:.5,y:.32,c:'181,18,36',o:.22},{a:.06,f:.0023,s:-.38,y:.5,c:'181,18,36',o:.15},{a:.08,f:.0012,s:.28,y:.68,c:'244,241,236',o:.05},{a:.05,f:.0029,s:-.66,y:.86,c:'181,18,36',o:.2}];
-  function draw(){
-    const bg=g.createLinearGradient(0,0,0,h);bg.addColorStop(0,'#090909');bg.addColorStop(1,'#140708');
-    g.fillStyle=bg;g.fillRect(0,0,w,h);
-    L.forEach((l,i)=>{
-      g.beginPath();
-      for(let x=0;x<=w+10;x+=10){
-        const d=Math.exp(-Math.pow(x/w-mx,2)*7);
-        const y=h*l.y+Math.sin(x*l.f+t*l.s+i*1.7)*h*l.a*(1+.7*d)+Math.sin(x*l.f*2.2-t*l.s*.8)*h*l.a*.3+(my-.5)*26*(i+1)/2;
-        x?g.lineTo(x,y):g.moveTo(x,y);
+  const canvas3d = document.getElementById('space3d');
+  function initSpace3D() {
+    if (!window.THREE) return;
+    const THREE = window.THREE;
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas3d, antialias: true, alpha: false });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.15;
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x060608);
+    scene.fog = new THREE.FogExp2(0x060608, 0.0085);
+
+    const camera = new THREE.PerspectiveCamera(48, window.innerWidth / window.innerHeight, 0.1, 400);
+    camera.position.set(0, 6.5, 34);
+
+    // Procedural high-detail textures (no external CORS dependency)
+    function makeRadialGlow(stops, size = 256) {
+      const c = document.createElement('canvas');
+      c.width = c.height = size;
+      const ctx = c.getContext('2d');
+      const grd = ctx.createRadialGradient(size/2, size/2, 0, size/2, size/2, size/2);
+      stops.forEach(([offset, color]) => grd.addColorStop(offset, color));
+      ctx.fillStyle = grd;
+      ctx.fillRect(0, 0, size, size);
+      return new THREE.CanvasTexture(c);
+    }
+
+    function makeAccretionTexture() {
+      const c = document.createElement('canvas');
+      c.width = c.height = 512;
+      const ctx = c.getContext('2d');
+      const cx = 256, cy = 256;
+      const grd = ctx.createRadialGradient(cx, cy, 58, cx, cy, 250);
+      grd.addColorStop(0.0, 'rgba(0,0,0,0)');
+      grd.addColorStop(0.08, 'rgba(255,244,230,0.98)');
+      grd.addColorStop(0.20, 'rgba(235,45,68,0.88)');
+      grd.addColorStop(0.45, 'rgba(181,18,36,0.52)');
+      grd.addColorStop(0.75, 'rgba(110,10,22,0.18)');
+      grd.addColorStop(1.0, 'rgba(0,0,0,0)');
+      ctx.fillStyle = grd;
+      ctx.fillRect(0, 0, 512, 512);
+
+      // Swirl streaks
+      ctx.globalCompositeOperation = 'lighter';
+      for (let i = 0; i < 160; i++) {
+        const r = 68 + Math.random() * 165;
+        const a0 = Math.random() * Math.PI * 2;
+        const span = 0.4 + Math.random() * 1.4;
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, a0, a0 + span);
+        ctx.strokeStyle = i % 3 === 0 ? 'rgba(255,215,190,0.16)' : 'rgba(225,29,72,0.18)';
+        ctx.lineWidth = 1 + Math.random() * 2.5;
+        ctx.stroke();
       }
-      g.strokeStyle='rgba('+l.c+','+Math.min(.5,l.o*2)+')';g.lineWidth=1.2;g.stroke();
-      g.lineTo(w+10,h);g.lineTo(0,h);g.closePath();
-      const f=g.createLinearGradient(0,h*(l.y-.12),0,h);
-      f.addColorStop(0,'rgba('+l.c+','+l.o+')');f.addColorStop(1,'rgba('+l.c+',0)');
-      g.fillStyle=f;g.fill();
+      return new THREE.CanvasTexture(c);
+    }
+
+    function makeEarthTextures() {
+      const w = 512, h = 256;
+      const c = document.createElement('canvas');
+      c.width = w; c.height = h;
+      const ctx = c.getContext('2d');
+
+      // Deep ocean gradient
+      const ocean = ctx.createLinearGradient(0, 0, 0, h);
+      ocean.addColorStop(0, '#07192e');
+      ocean.addColorStop(0.5, '#0b2d52');
+      ocean.addColorStop(1, '#07192e');
+      ctx.fillStyle = ocean;
+      ctx.fillRect(0, 0, w, h);
+
+      // Deterministic pseudo-random continents
+      let seed = 42;
+      const rnd = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
+
+      for (let i = 0; i < 26; i++) {
+        const x = rnd() * w;
+        const y = 32 + rnd() * (h - 64);
+        const rx = 18 + rnd() * 48;
+        const ry = 10 + rnd() * 26;
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate((rnd() - 0.5) * 0.8);
+        ctx.beginPath();
+        for (let a = 0; a < Math.PI * 2; a += 0.35) {
+          const jitter = 0.72 + rnd() * 0.55;
+          const px = Math.cos(a) * rx * jitter;
+          const py = Math.sin(a) * ry * jitter;
+          a === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+        }
+        ctx.closePath();
+        ctx.fillStyle = i % 3 === 0 ? '#274c37' : '#1d3c2d';
+        ctx.fill();
+        ctx.restore();
+      }
+
+      // Polar ice caps
+      ctx.fillStyle = 'rgba(240,244,248,0.82)';
+      ctx.fillRect(0, 0, w, 12);
+      ctx.fillRect(0, h - 12, w, 12);
+
+      // Cloud layer
+      const cc = document.createElement('canvas');
+      cc.width = w; cc.height = h;
+      const cctx = cc.getContext('2d');
+      for (let i = 0; i < 95; i++) {
+        const cx = rnd() * w;
+        const cy = 16 + rnd() * (h - 32);
+        const r = 8 + rnd() * 24;
+        const g = cctx.createRadialGradient(cx, cy, 1, cx, cy, r);
+        g.addColorStop(0, 'rgba(255,255,255,0.42)');
+        g.addColorStop(1, 'rgba(255,255,255,0)');
+        cctx.fillStyle = g;
+        cctx.beginPath();
+        cctx.arc(cx, cy, r, 0, Math.PI * 2);
+        cctx.fill();
+      }
+
+      return {
+        map: new THREE.CanvasTexture(c),
+        clouds: new THREE.CanvasTexture(cc)
+      };
+    }
+
+    // Lighting
+    scene.add(new THREE.AmbientLight(0x2a1b22, 1.3));
+    const sunLight = new THREE.PointLight(0xffd2b8, 3.2, 140);
+    sunLight.position.set(16, 5, -8);
+    scene.add(sunLight);
+
+    const bhLight = new THREE.PointLight(0xd91c34, 2.8, 120);
+    bhLight.position.set(-15, 2.5, -14);
+    scene.add(bhLight);
+
+    // 1. Deep Starfield (3,200 stars)
+    const starCount = 3200;
+    const starPos = new Float32Array(starCount * 3);
+    const starCol = new Float32Array(starCount * 3);
+    for (let i = 0; i < starCount; i++) {
+      const r = 45 + Math.random() * 180;
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(2 * Math.random() - 1);
+      starPos[i*3] = r * Math.sin(phi) * Math.cos(theta);
+      starPos[i*3+1] = r * Math.sin(phi) * Math.sin(theta);
+      starPos[i*3+2] = r * Math.cos(phi);
+
+      const tint = Math.random();
+      if (tint < 0.18) { // subtle crimson stars
+        starCol[i*3] = 0.92; starCol[i*3+1] = 0.35; starCol[i*3+2] = 0.42;
+      } else if (tint < 0.42) { // warm ivory
+        starCol[i*3] = 0.96; starCol[i*3+1] = 0.93; starCol[i*3+2] = 0.88;
+      } else { // cool blue-white
+        starCol[i*3] = 0.78; starCol[i*3+1] = 0.85; starCol[i*3+2] = 1.0;
+      }
+    }
+    const starGeo = new THREE.BufferGeometry();
+    starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+    starGeo.setAttribute('color', new THREE.BufferAttribute(starCol, 3));
+    const stars = new THREE.Points(
+      starGeo,
+      new THREE.PointsMaterial({ size: 0.38, vertexColors: true, transparent: true, opacity: 0.88 })
+    );
+    scene.add(stars);
+
+    // 2. Gargantua-style 3D Black Hole (Left-Back Focal System)
+    const blackHoleGroup = new THREE.Group();
+    blackHoleGroup.position.set(-15, 2.5, -14);
+    blackHoleGroup.rotation.set(0.32, 0.25, -0.24);
+    scene.add(blackHoleGroup);
+
+    // Event Horizon Core
+    const bhCore = new THREE.Mesh(
+      new THREE.SphereGeometry(3.1, 48, 48),
+      new THREE.MeshBasicMaterial({ color: 0x000000 })
+    );
+    blackHoleGroup.add(bhCore);
+
+    // Photon Ring (thin blazing edge)
+    const photonRing = new THREE.Mesh(
+      new THREE.RingGeometry(3.14, 3.34, 96),
+      new THREE.MeshBasicMaterial({
+        color: 0xffd7c8,
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.92,
+        blending: THREE.AdditiveBlending
+      })
+    );
+    blackHoleGroup.add(photonRing);
+
+    // Gravitational Lensing Halo (vertical warped ring)
+    const lensingHalo = new THREE.Mesh(
+      new THREE.RingGeometry(3.2, 4.9, 96),
+      new THREE.MeshBasicMaterial({
+        map: makeRadialGlow([
+          [0.0, 'rgba(0,0,0,0)'],
+          [0.58, 'rgba(255,220,200,0.75)'],
+          [0.72, 'rgba(181,18,36,0.55)'],
+          [1.0, 'rgba(0,0,0,0)']
+        ]),
+        side: THREE.DoubleSide,
+        transparent: true,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending
+      })
+    );
+    blackHoleGroup.add(lensingHalo);
+
+    // Swirl Accretion Disk (horizontal)
+    const accretionTex = makeAccretionTexture();
+    const accretionDisk = new THREE.Mesh(
+      new THREE.RingGeometry(3.3, 12.2, 128),
+      new THREE.MeshBasicMaterial({
+        map: accretionTex,
+        side: THREE.DoubleSide,
+        transparent: true,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending
+      })
+    );
+    accretionDisk.rotation.x = Math.PI / 2.15;
+    blackHoleGroup.add(accretionDisk);
+
+    // Relativistic Particle Vortex around Black Hole
+    const vortexCount = 900;
+    const vortexPos = new Float32Array(vortexCount * 3);
+    const vortexData = [];
+    for (let i = 0; i < vortexCount; i++) {
+      const radius = 3.6 + Math.random() * 9.5;
+      const angle = Math.random() * Math.PI * 2;
+      const speed = (1.6 / Math.sqrt(radius)) * (0.8 + Math.random() * 0.4);
+      const yOff = (Math.random() - 0.5) * 0.35;
+      vortexData.push({ radius, angle, speed, yOff });
+      vortexPos[i*3] = Math.cos(angle) * radius;
+      vortexPos[i*3+1] = yOff;
+      vortexPos[i*3+2] = Math.sin(angle) * radius;
+    }
+    const vortexGeo = new THREE.BufferGeometry();
+    vortexGeo.setAttribute('position', new THREE.BufferAttribute(vortexPos, 3));
+    const vortexPoints = new THREE.Points(
+      vortexGeo,
+      new THREE.PointsMaterial({
+        color: 0xff5a6e,
+        size: 0.14,
+        transparent: true,
+        opacity: 0.78,
+        blending: THREE.AdditiveBlending
+      })
+    );
+    vortexPoints.rotation.x = 0.12;
+    blackHoleGroup.add(vortexPoints);
+
+    // 3. Solar System & Detailed 3D Earth (Right-Center System)
+    const solarSystem = new THREE.Group();
+    solarSystem.position.set(16, 5, -8);
+    scene.add(solarSystem);
+
+    // Sun Core + Corona Sprite
+    const sunMesh = new THREE.Mesh(
+      new THREE.SphereGeometry(2.3, 36, 36),
+      new THREE.MeshBasicMaterial({ color: 0xffb870 })
+    );
+    solarSystem.add(sunMesh);
+
+    const sunCorona = new THREE.Sprite(
+      new THREE.SpriteMaterial({
+        map: makeRadialGlow([
+          [0.0, 'rgba(255,245,220,1)'],
+          [0.25, 'rgba(255,150,70,0.65)'],
+          [0.55, 'rgba(181,18,36,0.28)'],
+          [1.0, 'rgba(0,0,0,0)']
+        ]),
+        transparent: true,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false
+      })
+    );
+    sunCorona.scale.set(13, 13, 1);
+    solarSystem.add(sunCorona);
+
+    // Orbiting Planets (Mercury, Venus, Mars, Saturn with rings)
+    const planets = [];
+    function addPlanet(opts) {
+      const orbitCurve = new THREE.RingGeometry(opts.dist - 0.03, opts.dist + 0.03, 96);
+      const orbitLine = new THREE.Mesh(
+        orbitCurve,
+        new THREE.MeshBasicMaterial({
+          color: 0xf4f1ec,
+          side: THREE.DoubleSide,
+          transparent: true,
+          opacity: 0.08
+        })
+      );
+      orbitLine.rotation.x = Math.PI / 2;
+      solarSystem.add(orbitLine);
+
+      const pivot = new THREE.Group();
+      pivot.rotation.y = opts.startAngle;
+      solarSystem.add(pivot);
+
+      const mesh = new THREE.Mesh(
+        new THREE.SphereGeometry(opts.size, 28, 28),
+        new THREE.MeshStandardMaterial({
+          color: opts.color,
+          roughness: 0.72,
+          metalness: 0.1
+        })
+      );
+      mesh.position.x = opts.dist;
+      pivot.add(mesh);
+
+      if (opts.hasRing) {
+        const ring = new THREE.Mesh(
+          new THREE.RingGeometry(opts.size * 1.4, opts.size * 2.35, 64),
+          new THREE.MeshBasicMaterial({
+            color: 0xd9c2a3,
+            side: THREE.DoubleSide,
+            transparent: true,
+            opacity: 0.55
+          })
+        );
+        ring.rotation.x = Math.PI / 2.4;
+        mesh.add(ring);
+      }
+
+      planets.push({ pivot, mesh, speed: opts.speed });
+    }
+
+    addPlanet({ dist: 4.4, size: 0.32, color: 0xb5aba0, speed: 0.48, startAngle: 0.6 });
+    addPlanet({ dist: 6.4, size: 0.52, color: 0xe3bb76, speed: 0.34, startAngle: 2.3 });
+    addPlanet({ dist: 12.6, size: 0.44, color: 0xc94a38, speed: 0.19, startAngle: 4.1 });
+    addPlanet({ dist: 16.5, size: 0.92, color: 0xdfc18d, speed: 0.12, startAngle: 1.4, hasRing: true });
+
+    // Featured 3D Earth + Clouds + Atmosphere + Moon (in Foreground-Right Orbit)
+    const earthOrbitPivot = new THREE.Group();
+    earthOrbitPivot.rotation.y = 0.85;
+    solarSystem.add(earthOrbitPivot);
+
+    const earthOrbitRing = new THREE.Mesh(
+      new THREE.RingGeometry(9.47, 9.53, 120),
+      new THREE.MeshBasicMaterial({
+        color: 0xb51224,
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.22
+      })
+    );
+    earthOrbitRing.rotation.x = Math.PI / 2;
+    solarSystem.add(earthOrbitRing);
+
+    const earthGroup = new THREE.Group();
+    earthGroup.position.set(9.5, 0, 0);
+    earthGroup.rotation.z = 0.41; // 23.5 deg axial tilt
+    earthOrbitPivot.add(earthGroup);
+
+    const earthTex = makeEarthTextures();
+    const earthMesh = new THREE.Mesh(
+      new THREE.SphereGeometry(1.38, 48, 48),
+      new THREE.MeshStandardMaterial({
+        map: earthTex.map,
+        roughness: 0.65,
+        metalness: 0.12
+      })
+    );
+    earthGroup.add(earthMesh);
+
+    const earthClouds = new THREE.Mesh(
+      new THREE.SphereGeometry(1.41, 48, 48),
+      new THREE.MeshStandardMaterial({
+        map: earthTex.clouds,
+        transparent: true,
+        opacity: 0.72,
+        depthWrite: false
+      })
+    );
+    earthGroup.add(earthClouds);
+
+    // Atmospheric Fresnel Glow Sprite
+    const earthAtmo = new THREE.Sprite(
+      new THREE.SpriteMaterial({
+        map: makeRadialGlow([
+          [0.0, 'rgba(65,155,255,0)'],
+          [0.64, 'rgba(65,155,255,0.28)'],
+          [0.82, 'rgba(110,190,255,0.45)'],
+          [1.0, 'rgba(0,0,0,0)']
+        ]),
+        transparent: true,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false
+      })
+    );
+    earthAtmo.scale.set(3.8, 3.8, 1);
+    earthGroup.add(earthAtmo);
+
+    // Orbiting Moon
+    const moonPivot = new THREE.Group();
+    earthGroup.add(moonPivot);
+    const moonMesh = new THREE.Mesh(
+      new THREE.SphereGeometry(0.32, 24, 24),
+      new THREE.MeshStandardMaterial({ color: 0xcfcfd4, roughness: 0.9 })
+    );
+    moonMesh.position.set(2.45, 0.12, 0);
+    moonPivot.add(moonMesh);
+
+    // Pointer + Scroll Parallax
+    let targetMX = 0, targetMY = 0, curMX = 0, curMY = 0;
+    window.addEventListener('pointermove', e => {
+      targetMX = (e.clientX / window.innerWidth - 0.5) * 2;
+      targetMY = (e.clientY / window.innerHeight - 0.5) * 2;
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
     });
+
+    const clock = new THREE.Clock();
+    function animate() {
+      const dt = Math.min(clock.getDelta(), 0.05);
+      const elapsed = clock.getElapsedTime();
+
+      // Rotate accretion disk & lensing shimmer
+      accretionDisk.rotation.z -= dt * 0.55;
+      lensingHalo.rotation.z += dt * 0.12;
+
+      // Update relativistic black hole vortex particles
+      const posAttr = vortexGeo.getAttribute('position');
+      for (let i = 0; i < vortexCount; i++) {
+        const p = vortexData[i];
+        p.angle += dt * p.speed;
+        posAttr.setXYZ(
+          i,
+          Math.cos(p.angle) * p.radius,
+          p.yOff + Math.sin(p.angle * 3 + elapsed) * 0.06,
+          Math.sin(p.angle) * p.radius
+        );
+      }
+      posAttr.needsUpdate = true;
+
+      // Solar system & Earth rotations
+      sunMesh.rotation.y += dt * 0.18;
+      planets.forEach(p => {
+        p.pivot.rotation.y += dt * p.speed;
+        p.mesh.rotation.y += dt * 0.5;
+      });
+
+      earthOrbitPivot.rotation.y += dt * 0.14;
+      earthMesh.rotation.y += dt * 0.35;
+      earthClouds.rotation.y += dt * 0.44;
+      moonPivot.rotation.y += dt * 0.85;
+
+      // Subtle starfield drift
+      stars.rotation.y = elapsed * 0.008;
+
+      // Smooth camera parallax from pointer + scroll depth
+      curMX += (targetMX - curMX) * 0.04;
+      curMY += (targetMY - curMY) * 0.04;
+      const scrollRatio = Math.min(window.scrollY / Math.max(document.body.scrollHeight - window.innerHeight, 1), 1);
+
+      camera.position.x = curMX * 3.4 - scrollRatio * 4.5;
+      camera.position.y = 6.5 - curMY * 2.2 - scrollRatio * 3.2;
+      camera.position.z = 34 - scrollRatio * 8.5;
+      camera.lookAt(curMX * 1.2, 1.5 - scrollRatio * 1.5, -9);
+
+      renderer.render(scene, camera);
+      if (!reduce) requestAnimationFrame(animate);
+    }
+    animate();
   }
-  (function loop(){t+=.011;draw();if(!reduce)requestAnimationFrame(loop)})();
+
+  const threeScript = document.createElement('script');
+  threeScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+  threeScript.onload = initSpace3D;
+  document.head.appendChild(threeScript);
 
   if(hover&&!reduce){
     const gl=document.getElementById('glow');let gx=0,gy=0,tx=0,ty=0;
