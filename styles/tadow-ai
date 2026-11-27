@@ -1,0 +1,64 @@
+/* TADOW AI widget — isolated styles, matched to the site's black/crimson palette. */
+#tadow-ai-root {
+  --tadow-red: #b51224;
+  --tadow-bg: #0d0d0e;
+  --tadow-panel: #151516;
+  --tadow-ivory: #f4f1ec;
+  --tadow-muted: #aaa49c;
+  --tadow-line: rgba(244,241,236,.14);
+  font-family: var(--sans, Manrope, Arial, sans-serif);
+  color: var(--tadow-ivory);
+}
+#tadow-ai-root * { box-sizing: border-box; }
+.tadow-launcher {
+  position: fixed; right: 25px; bottom: 25px; z-index: 1001;
+  width: 64px; height: 64px; display: grid; place-items: center;
+  border: 1px solid rgba(255,255,255,.24); border-radius: 50%;
+  color: white; background: radial-gradient(circle at 35% 28%, #e33b50, #971021 65%, #490711);
+  box-shadow: 0 9px 34px rgba(181,18,36,.4), inset 0 1px 8px rgba(255,255,255,.2);
+  cursor: pointer; transition: transform .2s ease, box-shadow .2s ease;
+}
+.tadow-launcher:hover { transform: translateY(-3px); box-shadow: 0 13px 42px rgba(181,18,36,.52); }
+.tadow-launcher-mark { font: 700 27px/1 var(--serif, Georgia, serif); letter-spacing: -.08em; text-shadow: 0 1px 10px rgba(255,255,255,.28); }
+.tadow-panel {
+  position: fixed; right: 25px; bottom: 104px; z-index: 1001;
+  width: min(420px, calc(100vw - 28px)); height: min(650px, calc(100dvh - 130px)); min-height: 390px;
+  display: none; flex-direction: column; overflow: hidden;
+  background: rgba(13,13,14,.985); border: 1px solid rgba(181,18,36,.52);
+  box-shadow: 0 24px 85px rgba(0,0,0,.72), 0 0 38px rgba(181,18,36,.13);
+  backdrop-filter: blur(18px);
+}
+.tadow-panel.is-open { display: flex; animation: tadow-in .2s ease-out; }
+@keyframes tadow-in { from { opacity: 0; transform: translateY(10px) scale(.985); } to { opacity: 1; transform: none; } }
+.tadow-header { display: flex; align-items: center; gap: 12px; padding: 16px; border-bottom: 1px solid var(--tadow-line); background: linear-gradient(110deg,#211014,#141414 72%); }
+.tadow-mark { width: 42px; height: 42px; flex: 0 0 42px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.14); border-radius: 50%; color: white; font: 700 20px var(--serif,Georgia,serif); background: radial-gradient(circle at 35% 28%,#df3448,#790b19); box-shadow: 0 0 20px rgba(181,18,36,.28); }
+.tadow-heading { min-width: 0; flex: 1; }
+.tadow-heading strong { display: block; font: 700 20px/1.15 var(--serif,Georgia,serif); letter-spacing: .09em; }
+.tadow-heading span { display: block; margin-top: 4px; color: var(--tadow-muted); font-size: 9px; letter-spacing: .17em; }
+.tadow-close { border: 0; padding: 4px 7px; color: var(--tadow-muted); background: transparent; cursor: pointer; font-size: 27px; line-height: 1; }
+.tadow-close:hover { color: white; }
+.tadow-messages { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding: 17px 14px; scroll-behavior: smooth; }
+.tadow-message { max-width: 91%; padding: 11px 13px; border: 1px solid var(--tadow-line); color: var(--tadow-ivory); background: #1b1b1c; font-size: 13px; line-height: 1.65; overflow-wrap: anywhere; }
+.tadow-message.assistant { align-self: flex-start; border-left: 2px solid var(--tadow-red); }
+.tadow-message.user { align-self: flex-end; background: #351219; border-color: rgba(181,18,36,.4); }
+.tadow-message.typing { color: var(--tadow-muted); font-style: italic; }
+.tadow-sources { display: flex; flex-direction: column; gap: 5px; margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--tadow-line); font-size: 11px; }
+.tadow-sources strong { color: var(--tadow-muted); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.tadow-sources a { color: #f08b98; text-decoration: underline; text-underline-offset: 2px; }
+.tadow-sources a:hover { color: white; }
+.tadow-quick { display: flex; flex-wrap: wrap; gap: 7px; padding: 0 14px 12px; }
+.tadow-quick button { border: 1px solid var(--tadow-line); padding: 7px 9px; color: var(--tadow-muted); background: transparent; font-size: 10px; cursor: pointer; }
+.tadow-quick button:hover { border-color: var(--tadow-red); color: white; }
+.tadow-form { display: flex; align-items: flex-end; gap: 8px; padding: 12px; border-top: 1px solid var(--tadow-line); background: #111; }
+.tadow-form textarea { flex: 1; min-width: 0; min-height: 42px; max-height: 120px; resize: none; border: 1px solid var(--tadow-line); border-radius: 0; padding: 10px; color: white; background: #1a1a1a; font: 12px/1.5 var(--sans,Arial,sans-serif); }
+.tadow-form textarea:focus { outline: 1px solid var(--tadow-red); }
+.tadow-form textarea:disabled { opacity: .65; }
+.tadow-send { width: 42px; height: 42px; flex: 0 0 42px; display: grid; place-items: center; border: 0; color: white; background: var(--tadow-red); cursor: pointer; }
+.tadow-send:disabled { opacity: .45; cursor: wait; }
+.tadow-send svg { width: 19px; height: 19px; }
+.tadow-note { padding: 0 12px 10px; color: #817c75; background: #111; font-size: 9px; line-height: 1.45; text-align: center; }
+@media (max-width: 520px) {
+  .tadow-launcher { right: 16px; bottom: 16px; width: 58px; height: 58px; }
+  .tadow-panel { right: 10px; bottom: 84px; width: calc(100vw - 20px); height: min(680px, calc(100dvh - 105px)); }
+}
+@media (prefers-reduced-motion: reduce) { .tadow-panel.is-open { animation: none; } .tadow-launcher { transition: none; } }
